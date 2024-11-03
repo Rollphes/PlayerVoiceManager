@@ -4,7 +4,7 @@
 https://github.com/Rollphes/PlayerVoiceManager<br>
 VRChat ワールドアセットになります。<br>
 VRChat での利用を想定しています。<br>
-[こちらにて、最新版を確認できます。](https://github.com/Rollphes/PlayerVoiceManager/releases/tag/latest)
+[こちらにて、最新版を確認できます。](https://github.com/Rollphes/PlayerVoiceManager/releases/latest)
 [VCCへの追加はこちらから](https://rollphes.github.io/vpm-repos/)
 
 ## 前提アセット
