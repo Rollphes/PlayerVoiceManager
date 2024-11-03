@@ -16,6 +16,9 @@ namespace io.github.rollphes.playerVoiceManager
         public override int[] GlobalPlayerIds { get => this._activePlayerIds; set => this._activePlayerIds = value; }
         public override int[] LocalPlayerIds { get; set; }
 
+        [Header("---　ハンドマイク／Hand Mic　---")]
+
+        [Header("マイクON時の設定")]
         [SerializeField] private float _gain = 0.0f;
         [SerializeField] private float _distanceNear = 100.0f;
         [SerializeField] private float _distanceFar = 100.0f;

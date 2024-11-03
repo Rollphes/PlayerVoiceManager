@@ -1,5 +1,4 @@
-﻿
-using UdonSharp;
+﻿using UdonSharp;
 
 using UnityEngine;
 
@@ -26,11 +25,14 @@ namespace io.github.rollphes.playerVoiceManager
             set => Debug.LogError($"Can't Use Setter in LocalPlayerIds:{value}");
         }
 
+        [Header("---　エリアマイク／Area Mic　---")]
+
+        [Header("マイクON時の設定")]
         [SerializeField] private float _gain = 0.0f;
         [SerializeField] private float _distanceNear = 100.0f;
         [SerializeField] private float _distanceFar = 100.0f;
         [SerializeField] private float _volumetricRadius = 0.0f;
-        private DataList _inPlayerIdList = new DataList();
+        private readonly DataList _inPlayerIdList = new DataList();
 
         public bool State {
             set {
@@ -62,8 +64,11 @@ namespace io.github.rollphes.playerVoiceManager
             }
             get => this._state;
         }
+        [Header("スイッチの初期ON/OFF")]
         [SerializeField, UdonSynced, FieldChangeCallback(nameof(State))] private bool _state = false;
+        [Header("スイッチONの際のオブジェクト")]
         [SerializeField] private GameObject[] _onObjects;
+        [Header("スイッチOFFの際のオブジェクト")]
         [SerializeField] private GameObject[] _offObjects;
 
         private void Start() {

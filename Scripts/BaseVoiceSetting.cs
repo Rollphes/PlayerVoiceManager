@@ -13,6 +13,9 @@ namespace io.github.rollphes.playerVoiceManager
         public abstract int[] GlobalPlayerIds { get; set; }
         public abstract int[] LocalPlayerIds { get; set; }
 
+        [Header("---　ボイスセッティング／Voice Setting　---")]
+
+        [Header("Managerの紐づけ")]
         [SerializeField] private PlayerVoiceManager _playerVoiceManager;
 
         protected void EmitGlobalPlayerIdsChanged() {

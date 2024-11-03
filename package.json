@@ -2,7 +2,7 @@
     "name": "io.github.rollphes.player-voice-manager",
     "description": "ワールドの音声周りのprefabを内包したアセットパッケージです。",
     "displayName": "PlayerVoiceManager",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "unity": "2018.1",
     "author": {
         "name": "Rollphes",

@@ -28,6 +28,9 @@ namespace io.github.rollphes.playerVoiceManager
             set => Debug.LogError($"Can't Use Setter in LocalPlayerIds:{value}");
         }
 
+        [Header("---　プライベートエリア／Private Area　---")]
+
+        [Header("聞こえなくなる側の声の大きさの設定")]
         [SerializeField] private float _gain = 0;
         [SerializeField] private float _distanceNear = 0;
         [SerializeField] private float _distanceFar = 0;
@@ -64,11 +67,14 @@ namespace io.github.rollphes.playerVoiceManager
             }
             get => this._state;
         }
+        [Header("スイッチの初期ON/OFF")]
         [SerializeField, UdonSynced, FieldChangeCallback(nameof(State))] private bool _state = false;
+        [Header("スイッチONの際のオブジェクト")]
         [SerializeField] private GameObject[] _onObjects;
+        [Header("スイッチOFFの際のオブジェクト")]
         [SerializeField] private GameObject[] _offObjects;
-        private DataList _inPlayerIdList = new DataList();
-        private DataList _outPlayerIdList = new DataList();
+        private readonly DataList _inPlayerIdList = new DataList();
+        private readonly DataList _outPlayerIdList = new DataList();
 
         private void Start() {
             this.State = this._state;

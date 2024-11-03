@@ -4,7 +4,8 @@
 https://github.com/Rollphes/PlayerVoiceManager<br>
 VRChat ワールドアセットになります。<br>
 VRChat での利用を想定しています。<br>
-[こちらにて、最新版を確認できます。](https://github.com/Rollphes/genshin-manager/releases/tag/latest)
+[こちらにて、最新版を確認できます。](https://github.com/Rollphes/PlayerVoiceManager/releases/tag/latest)
+[VCCへの追加はこちらから](https://rollphes.github.io/vpm-repos/)
 
 ## 前提アセット
 
@@ -58,6 +59,7 @@ AreaMic を参考に各種微調整をご案内します。
   また、外部から collider 内の人の声は聞こえません。<br>
   聞こえなくなる側の声の大きさは、AreaMicCollider の Area Mic (Script)から変更可能です。<br>
   スイッチはグローバル動作、音声の設定はローカル動作になります。
+  ★今後改良予定★
 
 ## 内容物
 
@@ -74,3 +76,10 @@ unitypackage をインポートすると下記ファイルができます。<br>
 ├── SampleScene.unity<br>
 ├── Scripts ・・・ (内容中略)<br>
 └── package.json<br>
+
+## 動作確認環境
+- VRChatSDK-Base@3.7.2
+- VRChatSDK-Worlds@3.7.2
+
+## 最後に
+質問、バグ報告、要望についてはお気軽にご相談ください。
