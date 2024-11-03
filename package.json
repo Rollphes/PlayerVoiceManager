@@ -1,0 +1,15 @@
+{
+    "name": "io.github.rollphes.player-voice-manager",
+    "description": "ワールドの音声周りのprefabを内包したアセットパッケージです。",
+    "displayName": "PlayerVoiceManager",
+    "version": "1.0.0",
+    "unity": "2018.1",
+    "author": {
+        "name": "Rollphes",
+        "email": "subrollphes@gmail.com",
+        "url": "https://x.com/rollphes"
+    },
+    "keywords": [],
+    "license": "MIT",
+    "licensesUrl": "https://github.com/Rollphes/PlayerVoiceManager/blob/main/LICENSE"
+}
