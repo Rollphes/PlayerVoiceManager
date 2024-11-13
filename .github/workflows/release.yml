@@ -37,7 +37,7 @@ jobs:
           exclusions: '.git*'
 
       - name: Copy Package to Processed Folder
-        run: cp -r ${{ env.rootPath }} ${{ env.PROCESSED_ROOT_PATH }}
+        run: cp -r . ${{ env.PROCESSED_ROOT_PATH }}
 
       # Build a list of .meta files for future use
       - name: Track Package Meta Files
