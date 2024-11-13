@@ -36,8 +36,7 @@ jobs:
       - name: Prepare UnityPackage
         run: |
             mkdir -p ${{ env.rootPath }}
-            mv * ${{ env.rootPath }}/ || true
-            mv .* ${{ env.rootPath }}/ || true
+            cp -R . ${{ env.rootPath }}
             find Assets -name \*.meta > metaList
 
       - name: Create UnityPackage
