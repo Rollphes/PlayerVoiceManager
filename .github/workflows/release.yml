@@ -35,9 +35,12 @@ jobs:
 
       - name: Prepare UnityPackage
         run: |
-          mkdir -p "${{ env.rootPath }}"
-          cp -r "${{ github.workspace }}" "${{ env.rootPath }}"
-          find "${{ env.rootPath }}" -name \*.meta >> metaList
+            mkdir -p ${{ env.rootPath }}
+            cp -R . ${{ env.rootPath }}
+            cd Assets
+            find . -name \*.meta > ../metaList
+            cd ..
+            sed -i 's|^./|Assets/|' metaList
 
       - name: Create UnityPackage
         uses: pCYSl5EDgo/create-unitypackage@cfcd3cf0391a5ef1306342794866a9897c32af0b
