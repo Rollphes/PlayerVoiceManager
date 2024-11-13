@@ -36,6 +36,9 @@ jobs:
           filename: '${{ env.zipFile }}' # make the zip file two directories up, since we start two directories in above
           exclusions: '.git*'
 
+      - name: Copy to RootPath
+        run: cp -r "${{ github.workspace }}" "${{ env.rootPath }}"
+
       # Build a list of .meta files for future use
       - name: Track Package Meta Files
         run: find "${{ env.rootPath }}" -name \*.meta >> metaList
