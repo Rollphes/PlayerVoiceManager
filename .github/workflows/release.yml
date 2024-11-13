@@ -11,6 +11,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set processed root path
+        run: |
+          PROCESSED_PATH=$(echo "${{ env.rootPath }}" | sed 's/\//\\\//g')
+          echo "PROCESSED_ROOT_PATH=$PROCESSED_PATH" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
 
@@ -33,12 +38,12 @@ jobs:
         uses: thedoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
         with:
           type: 'zip'
-          filename: '${{env.zipFile}}' # make the zip file two directories up, since we start two directories in above
+          filename: '${{ env.zipFile }}' # make the zip file two directories up, since we start two directories in above
           exclusions: '.git*'
 
       # Build a list of .meta files for future use
       - name: Track Package Meta Files
-        run: find "." -name \*.meta | sed "s/./${{env.rootPath }}/" >> metaList
+        run: find "." -name \*.meta | sed "s/./${{ env.PROCESSED_ROOT_PATH }}/" >> metaList
 
       # Make a UnityPackage version of the Package for release
       - name: Create UnityPackage
