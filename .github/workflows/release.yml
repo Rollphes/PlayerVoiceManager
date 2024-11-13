@@ -1,7 +1,8 @@
 name: Build Release
 
 env:
-  packageName: "io.github.rollphes.player-voice-manager"
+  packageName: 'io.github.rollphes.player-voice-manager'
+  rootPath: 'Assets/${{github.repository}}'
 
 on:
   workflow_dispatch:
@@ -31,13 +32,13 @@ jobs:
       - name: Create Zip
         uses: thedoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
         with:
-            type: "zip"
-            filename: "${{env.zipFile}}" # make the zip file two directories up, since we start two directories in above
-            exclusions: ".git*"
+          type: 'zip'
+          filename: '${{env.zipFile}}' # make the zip file two directories up, since we start two directories in above
+          exclusions: '.git*'
 
       # Build a list of .meta files for future use
       - name: Track Package Meta Files
-        run: find "." -name \*.meta >> metaList
+        run: find "." -name \*.meta | sed "s/./${{env.rootPath }}/" >> metaList
 
       # Make a UnityPackage version of the Package for release
       - name: Create UnityPackage
