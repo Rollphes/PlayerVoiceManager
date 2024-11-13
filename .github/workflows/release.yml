@@ -11,6 +11,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set processed root path
+        run: |
+          PROCESSED_PATH=$(echo "${{ env.rootPath }}" | sed 's/\//\\\//g')
+          echo "PROCESSED_ROOT_PATH=$PROCESSED_PATH" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
 
@@ -35,9 +40,6 @@ jobs:
           type: 'zip'
           filename: '${{ env.zipFile }}' # make the zip file two directories up, since we start two directories in above
           exclusions: '.git*'
-
-      - name: Copy Package to Processed Folder
-        run: cp -r . ${{ env.PROCESSED_ROOT_PATH }}
 
       # Build a list of .meta files for future use
       - name: Track Package Meta Files
