@@ -230,8 +230,7 @@ MonoBehaviour:
       Data: 15|UnityEngine.HeaderAttribute, UnityEngine.CoreModule
     - Name: header
       Entry: 1
-      Data: "\u25A0\u25A0\u25A0\u3000\u30CF\u30F3\u30C9\u30DE\u30A4\u30AF\uFF0FHand
-        Mic\u3000\u25A0\u25A0\u25A0"
+      Data: "---\u3000\u30CF\u30F3\u30C9\u30DE\u30A4\u30AF\uFF0FHand Mic\u3000---"
     - Name: 
       Entry: 8
       Data: 

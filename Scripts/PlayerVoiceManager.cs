@@ -26,22 +26,15 @@ namespace io.github.rollphes.playerVoiceManager
 
         private void Start() {
             this._voiceSettings = this.GetComponentsInChildren<BaseVoiceSetting>();
-
-            this.UpdateGlobalSetting();
         }
 
         public override void OnDeserialization() {
+            Debug.Log(this._json);
             if (VRCJson.TryDeserializeFromJson(this._json, out var result)) {
                 this._playerGlobalSettings = result.DataList;
                 this.SetVoiceAllPlayer();
             } else {
                 Debug.LogError("Deserialization failed: " + result.ToString());
-            }
-        }
-
-        public override void OnPlayerJoined(VRCPlayerApi player) {
-            if (!Networking.IsMaster && Networking.LocalPlayer == player) {
-                this.OnDeserialization();
             }
         }
 
@@ -139,15 +132,6 @@ namespace io.github.rollphes.playerVoiceManager
                             this.AddPlayerGlobalSetting(playerId, i);
                         }
                     }
-                }
-            }
-
-            var players = new VRCPlayerApi[VRCPlayerApi.GetPlayerCount()];
-            VRCPlayerApi.GetPlayers(players);
-
-            foreach (var player in players) {
-                if (player != null && !this.ExistPlayerInGlobalSettings(player.playerId)) {
-                    this.AddPlayerGlobalSetting(player.playerId, -1);
                 }
             }
 

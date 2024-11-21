@@ -72,7 +72,9 @@ namespace io.github.rollphes.playerVoiceManager
                     this._outPlayerIdList.Clear();
                     this.EmitLocalPlayerIdsChanged();
                 }
-                this.RequestSerialization();
+                if (!this._isLocal) {
+                    this.RequestSerialization();
+                }
             }
             get => this._state;
         }
@@ -82,6 +84,8 @@ namespace io.github.rollphes.playerVoiceManager
         [SerializeField] private GameObject[] _onObjects;
         [Header("スイッチOFFの際のオブジェクト")]
         [SerializeField] private GameObject[] _offObjects;
+        [Header("ローカル化ON/OFF")]
+        [SerializeField] private bool _isLocal;
         private readonly DataList _inPlayerIdList = new DataList();
         private readonly DataList _outPlayerIdList = new DataList();
 
