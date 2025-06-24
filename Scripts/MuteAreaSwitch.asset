@@ -61,7 +61,7 @@ MonoBehaviour:
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: io.github.rollphes.playerVoiceManager.MuteArea, Assembly-CSharp
+      Data: io.github.rollphes.playerVoiceManager.MuteArea, io.rollphes.player-voice-manager
     - Name: 
       Entry: 8
       Data: 

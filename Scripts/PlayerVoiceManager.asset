@@ -434,7 +434,7 @@ MonoBehaviour:
       Data: 27|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: io.github.rollphes.playerVoiceManager.BaseVoiceSetting[], Assembly-CSharp
+      Data: io.github.rollphes.playerVoiceManager.BaseVoiceSetting[], io.rollphes.player-voice-manager
     - Name: 
       Entry: 8
       Data: 
